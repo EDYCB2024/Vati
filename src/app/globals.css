@@ -1,26 +1,81 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-surface: #f7f9fb;
+  --color-surface-bright: #f7f9fb;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f2f4f6;
+  --color-surface-container: #eceef0;
+  --color-surface-container-high: #e6e8ea;
+  --color-surface-container-highest: #e0e3e5;
+  --color-surface-dim: #d8dadc;
+
+  --color-primary: #3a388b;
+  --color-primary-container: #5250a4;
+  --color-primary-fixed: #e2dfff;
+  --color-primary-fixed-dim: #c3c0ff;
+  --color-on-primary: #ffffff;
+  --color-on-primary-fixed: #100563;
+
+  --color-secondary: #0058be;
+  --color-secondary-container: #2170e4;
+  --color-secondary-fixed: #d8e2ff;
+  --color-on-secondary: #ffffff;
+
+  --color-tertiary: #004a57;
+  --color-tertiary-container: #006374;
+  --color-tertiary-fixed: #acedff;
+  --color-on-tertiary-fixed: #001f26;
+
+  --color-on-surface: #191c1e;
+  --color-on-surface-variant: #454652;
+  --color-outline: #757684;
+  --color-outline-variant: #c5c5d4;
+
+  --color-error: #ba1a1a;
+  --color-error-container: #ffdad6;
+
+  --font-sans: var(--font-inter);
+  --font-headline: var(--font-plus-jakarta);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  color-scheme: light;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f7f9fb;
+  color: #191c1e;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+.font-headline {
+  font-family: var(--font-plus-jakarta), system-ui, -apple-system, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.vati-gradient {
+  background: linear-gradient(135deg, #3a388b 0%, #5250a4 100%);
+}
+
+.ambient-shadow {
+  box-shadow: 0 24px 60px -12px rgba(58, 56, 139, 0.08);
+}
+
+.ambient-shadow-sm {
+  box-shadow: 0 12px 32px -8px rgba(58, 56, 139, 0.06);
+}
+
+.ghost-ring {
+  box-shadow: 0 0 0 1px rgba(197, 197, 212, 0.25);
 }

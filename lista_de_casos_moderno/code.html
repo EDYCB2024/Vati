@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#e0e3e5",
+                    "tertiary-fixed-dim": "#4cd7f6",
+                    "surface-dim": "#d8dadc",
+                    "secondary-fixed": "#d8e2ff",
+                    "surface-container-low": "#f2f4f6",
+                    "primary": "#3a388b",
+                    "background": "#f7f9fb",
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#5654a8",
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#e2dfff",
+                    "error": "#ba1a1a",
+                    "on-surface-variant": "#454652",
+                    "inverse-on-surface": "#eff1f3",
+                    "inverse-primary": "#c3c0ff",
+                    "on-tertiary-container": "#66e2ff",
+                    "on-surface": "#191c1e",
+                    "surface-container": "#eceef0",
+                    "on-primary-fixed-variant": "#3e3c8f",
+                    "primary-container": "#5250a4",
+                    "outline-variant": "#c5c5d4",
+                    "on-tertiary-fixed": "#001f26",
+                    "on-primary-container": "#d0cdff",
+                    "on-tertiary-fixed-variant": "#004e5c",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed-variant": "#004395",
+                    "on-primary-fixed": "#100563",
+                    "secondary": "#0058be",
+                    "surface-bright": "#f7f9fb",
+                    "tertiary": "#004a57",
+                    "surface-container-high": "#e6e8ea",
+                    "secondary-fixed-dim": "#adc6ff",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#2d3133",
+                    "on-secondary-container": "#fefcff",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "on-secondary-fixed": "#001a42",
+                    "tertiary-container": "#006374",
+                    "on-background": "#191c1e",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#2170e4",
+                    "on-primary": "#ffffff",
+                    "surface": "#f7f9fb",
+                    "tertiary-fixed": "#acedff",
+                    "surface-variant": "#e0e3e5",
+                    "outline": "#757684"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .font-headline { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- Sidebar Navigation -->
+<aside class="hidden lg:flex flex-col p-6 fixed left-0 top-0 z-40 bg-slate-50/50 dark:bg-slate-950/50 backdrop-blur-2xl rounded-3xl h-[calc(100vh-2rem)] m-4 w-72 shadow-2xl shadow-indigo-900/5 font-['Plus_Jakarta_Sans'] text-sm">
+<div class="flex items-center gap-3 mb-10 px-4">
+<div class="w-10 h-10 rounded-xl bg-gradient-to-br from-primary to-primary-container flex items-center justify-center text-white shadow-lg">
+<span class="material-symbols-outlined">concierge</span>
+</div>
+<div>
+<h2 class="text-lg font-extrabold text-slate-900 leading-none">The Concierge</h2>
+<p class="text-[10px] text-slate-500 uppercase tracking-widest font-bold">Premium Support</p>
+</div>
+</div>
+<nav class="flex-1">
+<a class="flex items-center gap-3 text-slate-500 py-3 px-4 mb-2 hover:bg-indigo-50 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Overview</span>
+</a>
+<a class="flex items-center gap-3 bg-white text-indigo-600 shadow-sm rounded-xl py-3 px-4 mb-2 translate-x-1 transition-transform font-semibold" href="#">
+<span class="material-symbols-outlined">history</span>
+<span>Support History</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 py-3 px-4 mb-2 hover:bg-indigo-50 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">group</span>
+<span>Community</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 py-3 px-4 mb-2 hover:bg-indigo-50 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">library_books</span>
+<span>Resource Hub</span>
+</a>
+</nav>
+<div class="mt-auto pt-6">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-white rounded-full py-4 font-bold shadow-lg shadow-indigo-200 flex items-center justify-center gap-2 hover:scale-[1.02] transition-transform mb-6">
+<span class="material-symbols-outlined">add</span>
+                Nuevo Ticket
+            </button>
+<a class="flex items-center gap-3 text-slate-500 py-3 px-4 mb-2 hover:bg-indigo-50 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">help</span>
+<span>Help</span>
+</a>
+<a class="flex items-center gap-3 text-slate-500 py-3 px-4 mb-2 hover:bg-indigo-50 rounded-xl transition-all" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="lg:ml-80 p-8 max-w-7xl mx-auto">
+<!-- Top Nav Bar (Shared Concept) -->
+<header class="flex justify-between items-center w-full py-4 mb-10 sticky top-0 z-30 bg-white/70 backdrop-blur-xl -mx-4 px-4 rounded-2xl">
+<div class="flex items-center gap-4">
+<h1 class="text-3xl font-extrabold tracking-tight font-headline bg-gradient-to-br from-primary to-primary-container bg-clip-text text-transparent">
+                    Gestión de Tickets
+                </h1>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative hidden md:block">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+<input class="bg-surface-container-lowest border-none rounded-full py-2.5 pl-12 pr-6 w-80 text-sm focus:ring-2 focus:ring-secondary transition-all shadow-sm" placeholder="Buscar expedientes..." type="text"/>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-low transition-colors text-outline">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<img alt="User profile" class="w-10 h-10 rounded-full object-cover border-2 border-white shadow-sm" data-alt="Close-up portrait of a professional woman with a friendly expression in a modern office setting with soft natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2ZJwX9YzBKM8SblGz6XM_yvOHfk6PHD44lVwQaHMGAF5oQ_Z_7oSIqYIIEIeR5hRgUw8XCifc6HeoAOsQThQIRCnXXXxF4IZy0VoySllmgjyBv-eoGri5Ovl1n5la5sEuQVwrhg1bksMBULudxMbt3vx4JOl41g4UsApgS0w82NTt2q6-LCyqwZpk6os8snU2GXEQDHweynPzUlz6zf8gVN9GW7q9i6QeHVWv2FqXR0mnC4O_vAVapmDD5kQb9_aDfDhXcI76i94"/>
+</div>
+</header>
+<!-- Stats Overview (Asymmetric Layout) -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-b-4 border-indigo-500">
+<p class="text-label text-outline text-xs font-bold uppercase tracking-widest mb-2">Total Abiertos</p>
+<h3 class="text-3xl font-extrabold font-headline text-on-surface">24</h3>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-b-4 border-emerald-500">
+<p class="text-label text-outline text-xs font-bold uppercase tracking-widest mb-2">Resueltos Hoy</p>
+<h3 class="text-3xl font-extrabold font-headline text-on-surface">12</h3>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-b-4 border-amber-500">
+<p class="text-label text-outline text-xs font-bold uppercase tracking-widest mb-2">En Espera</p>
+<h3 class="text-3xl font-extrabold font-headline text-on-surface">08</h3>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm border-b-4 border-rose-500">
+<p class="text-label text-outline text-xs font-bold uppercase tracking-widest mb-2">Urgentes</p>
+<h3 class="text-3xl font-extrabold font-headline text-on-surface">03</h3>
+</div>
+</section>
+<!-- Filter & Search Section -->
+<section class="flex flex-wrap items-center justify-between gap-4 mb-8">
+<div class="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0">
+<button class="bg-primary text-white px-5 py-2 rounded-full text-sm font-semibold shadow-md">Todos</button>
+<button class="bg-surface-container-low text-on-surface-variant px-5 py-2 rounded-full text-sm font-semibold hover:bg-surface-container-highest transition-colors">Abiertos</button>
+<button class="bg-surface-container-low text-on-surface-variant px-5 py-2 rounded-full text-sm font-semibold hover:bg-surface-container-highest transition-colors">Pendientes</button>
+<button class="bg-surface-container-low text-on-surface-variant px-5 py-2 rounded-full text-sm font-semibold hover:bg-surface-container-highest transition-colors">Cerrados</button>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 bg-white px-4 py-2 rounded-xl text-sm font-medium border border-outline-variant/10 shadow-sm hover:shadow-md transition-all">
+<span class="material-symbols-outlined text-sm">filter_list</span>
+                    Filtros Avanzados
+                </button>
+<button class="flex items-center gap-2 bg-white px-4 py-2 rounded-xl text-sm font-medium border border-outline-variant/10 shadow-sm hover:shadow-md transition-all">
+<span class="material-symbols-outlined text-sm">sort</span>
+                    Ordenar por
+                </button>
+</div>
+</section>
+<!-- Ticket List Container -->
+<div class="space-y-4">
+<!-- Ticket Item 1 -->
+<div class="group bg-surface-container-lowest hover:bg-white p-6 rounded-xl shadow-[0_8px_30px_rgb(58,56,139,0.02)] hover:shadow-[0_12px_40px_rgb(58,56,139,0.06)] transition-all flex flex-col md:flex-row items-start md:items-center gap-6 cursor-pointer">
+<div class="flex items-center gap-4 flex-1">
+<div class="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 bg-slate-100">
+<img alt="Customer avatar" class="w-full h-full object-cover" data-alt="Professional headshot of a young man with glasses and a stylish haircut, smiling against a clean neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDiQYjvrncSKWgGn5bWZvqLPDqrbcMNsayvSCCYSZbXC8qloXiC3i4zZ4L6t3ua0qgo45fpUqI1vJI8dOQYt1NNRlTZ07SNrM8KTK23k9zU7tlJlpCOn6RoOb9HdgHm5VoBuYEAmG1PUpJbjdlhr5czcXEk51Br-GPGfU9rSzImaZ8nOam5Q7jTIOKUnif3D6egGBYAkn-Rpa_xRFhjTm56yan-WHCK9l26icN4-LIp5447qDAOO1JcEkJo0gCIHDMvxs9ecs8O-g"/>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="text-[10px] font-bold text-primary uppercase tracking-tighter bg-primary-fixed px-2 py-0.5 rounded">#TK-8842</span>
+<span class="text-xs text-outline font-medium">Hace 2 horas</span>
+</div>
+<h4 class="text-base font-bold text-on-surface group-hover:text-primary transition-colors">Fallo crítico en la pasarela de pagos internacionales</h4>
+<p class="text-sm text-on-surface-variant line-clamp-1">Los usuarios de la región EMEA están reportando errores 500 al intentar finalizar...</p>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-4 md:gap-8 w-full md:w-auto">
+<!-- Priority -->
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-rose-50 text-rose-700 border border-rose-100">
+<span class="w-2 h-2 rounded-full bg-rose-600 animate-pulse"></span>
+<span class="text-xs font-bold uppercase tracking-tight">Urgente</span>
+</div>
+<!-- Status -->
+<div class="px-3 py-1.5 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-100">
+<span class="text-xs font-bold uppercase tracking-tight">Nuevo</span>
+</div>
+<!-- Agent -->
+<div class="flex -space-x-2">
+<img alt="Agent avatar" class="w-8 h-8 rounded-full border-2 border-white object-cover" data-alt="Business woman portrait in a creative studio, soft studio lighting, modern minimalist professional look" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY9gPHA3_MRO97-riY1TzKJbRlY8lbVp6dY-43T8VGLb_Pq45LjFStLYSdNemdlHwxthheLDhp1HuVeE_Bx10P4nmcnxg3a4W6snDtwb251E4vez6_JVhOxfso_XFGVkNmaQy6K-kyitWtaqjaROVCm9FiqzEPbg_MNvk1QI5O2Fik-EsQx5wH3cuHRdnfaBtk3pRZ1iYfxlexrSAgU9SyOTYMPkrkFwqykzH4Pp4SdzctpaIKy7xEuCcTG8HtctgcuVXhqux4R7Q"/>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-[10px] font-bold text-outline border-2 border-white">+1</div>
+</div>
+</div>
+</div>
+<!-- Ticket Item 2 -->
+<div class="group bg-surface-container-lowest hover:bg-white p-6 rounded-xl shadow-[0_8px_30px_rgb(58,56,139,0.02)] hover:shadow-[0_12px_40px_rgb(58,56,139,0.06)] transition-all flex flex-col md:flex-row items-start md:items-center gap-6 cursor-pointer">
+<div class="flex items-center gap-4 flex-1">
+<div class="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 bg-slate-100">
+<img alt="Customer avatar" class="w-full h-full object-cover" data-alt="Smiling woman with curly hair looking directly at camera, soft outdoor evening light in an urban setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_v9aBdtFsQMVDuFzP7zXn_aqTgRB-fQqXu7BrgI6HTjkD9GRdeGGEaLai4nG-C08omWs1PnLg7r0804TLlHl8KUXZogSSjGB0SXHAR_avBzi9LrEdO9Ej-WDo3dwKFy5dFS2v_gqK6TNetWgKLKGw7a5Yk0Wl99ztb5ghyfj1hJycWz69zzi91oXDG3cf5mt791dztjizohgLTjeSN_lmM0ELb6o1ljZy2EHWj_arHOORPIF_RdgAIFXAbLx7ykN-fLDykqLCRD0"/>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="text-[10px] font-bold text-primary uppercase tracking-tighter bg-primary-fixed px-2 py-0.5 rounded">#TK-8839</span>
+<span class="text-xs text-outline font-medium">Hace 5 horas</span>
+</div>
+<h4 class="text-base font-bold text-on-surface group-hover:text-primary transition-colors">Actualización de datos fiscales para facturación anual</h4>
+<p class="text-sm text-on-surface-variant line-clamp-1">Requerimos cambiar el RFC y la dirección fiscal para la próxima factura de suscripción...</p>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-4 md:gap-8 w-full md:w-auto">
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-amber-50 text-amber-700 border border-amber-100">
+<span class="w-2 h-2 rounded-full bg-amber-500"></span>
+<span class="text-xs font-bold uppercase tracking-tight">Media</span>
+</div>
+<div class="px-3 py-1.5 rounded-full bg-amber-50 text-amber-700 border border-amber-100">
+<span class="text-xs font-bold uppercase tracking-tight">En Proceso</span>
+</div>
+<div class="flex">
+<img alt="Agent avatar" class="w-8 h-8 rounded-full border-2 border-white object-cover" data-alt="Mid-adult man with light beard and friendly expression, wearing a casual shirt, soft warm indoor lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuq0UmMQVahKjGPN4OtQyXkFZY7WKOZDt2dHR3Fciw73K7yPpkq6o3tH0320C9D_0mLEyM0aUnAdxRpLUZXkXauDmAKRKRs7PKIgxJFaBCgbW3dJnHWQVajgH0IElpyrbajQYDdpKiYnm8au9hBugP7w5cbZPPj9jXSYg9dPHXHb3El9jNHYjdgKxDU4iygqT7mF9hNecEKvKOHHy--JW449CzNQTu5_mK5sgUjlmREMh5FytpvwxqutrZrN4QtnQD6IcUwBp2H9Y"/>
+</div>
+</div>
+</div>
+<!-- Ticket Item 3 -->
+<div class="group bg-surface-container-lowest hover:bg-white p-6 rounded-xl shadow-[0_8px_30px_rgb(58,56,139,0.02)] hover:shadow-[0_12px_40px_rgb(58,56,139,0.06)] transition-all flex flex-col md:flex-row items-start md:items-center gap-6 cursor-pointer">
+<div class="flex items-center gap-4 flex-1">
+<div class="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 bg-slate-100">
+<img alt="Customer avatar" class="w-full h-full object-cover" data-alt="Corporate headshot of a male executive in a blue suit, professional studio lighting with soft shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-_wxwbSo3jP28GjV8HQbFMMIkBVw8Kv9pU5Lm2ecM0yk55x_bgNRIy2XgZTFubn0blfyGaU6zao7QwcOYs_Iq2opVOCwLhwhJ6evKWJBR1oTO5iAMArq9II3EOeJnPuLEGrehMvlm46O-aC5sxo01f5SuiSEkVYrgxUaMn6ykCaExa--RjJVOWA7uMfz8MCjcDySUgSAh7i-KpbaB8a1uqlJ0V2wcwKIdMcZZAkSt9Z0Woo6des0kAw-05Oo5uEHrdNEiCVO66k4"/>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="text-[10px] font-bold text-primary uppercase tracking-tighter bg-primary-fixed px-2 py-0.5 rounded">#TK-8835</span>
+<span class="text-xs text-outline font-medium">Ayer</span>
+</div>
+<h4 class="text-base font-bold text-on-surface group-hover:text-primary transition-colors">Solicitud de acceso API para entorno de staging</h4>
+<p class="text-sm text-on-surface-variant line-clamp-1">El equipo de desarrollo necesita las credenciales OAuth para comenzar las pruebas...</p>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-4 md:gap-8 w-full md:w-auto">
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">
+<span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+<span class="text-xs font-bold uppercase tracking-tight">Baja</span>
+</div>
+<div class="px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-100">
+<span class="text-xs font-bold uppercase tracking-tight">Resuelto</span>
+</div>
+<div class="flex">
+<span class="material-symbols-outlined text-outline">check_circle</span>
+</div>
+</div>
+</div>
+<!-- Ticket Item 4 -->
+<div class="group bg-surface-container-lowest hover:bg-white p-6 rounded-xl shadow-[0_8px_30px_rgb(58,56,139,0.02)] hover:shadow-[0_12px_40px_rgb(58,56,139,0.06)] transition-all flex flex-col md:flex-row items-start md:items-center gap-6 cursor-pointer">
+<div class="flex items-center gap-4 flex-1">
+<div class="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 bg-slate-100">
+<img alt="Customer avatar" class="w-full h-full object-cover" data-alt="Young man with modern fashion style, looking thoughtfully to the side, cinematic urban morning lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRI09GNcOb03qy6O7VGeJXPZeuZ6Vog8iipDOMO-vm43czZfkLiuKwE-IGy3Q9KvTwc0PGL-oGe-ehgZIQM5aMm0ZPPKFQk9Ct_zBzMC01PFSHxmKEPYqiCup4P5c6nIKInWdc_MyKnmCECENBxrYjDlBt-EbU098fzHHVl5j9kKGcWeqRKtW5EBqoYgKvN115W28dDprWMycoRIKO8dj-jBo-ga3O9uwm7To0hX9InOiX_oChvGkWK-KMhtpyhsMPKmBCbPB2fUY"/>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="text-[10px] font-bold text-primary uppercase tracking-tighter bg-primary-fixed px-2 py-0.5 rounded">#TK-8830</span>
+<span class="text-xs text-outline font-medium">Hace 2 días</span>
+</div>
+<h4 class="text-base font-bold text-on-surface group-hover:text-primary transition-colors">Error de visualización en panel de analíticas móviles</h4>
+<p class="text-sm text-on-surface-variant line-clamp-1">Los gráficos de barras se superponen en dispositivos iOS con pantallas pequeñas...</p>
+</div>
+</div>
+<div class="flex flex-wrap items-center gap-4 md:gap-8 w-full md:w-auto">
+<div class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-orange-50 text-orange-700 border border-orange-100">
+<span class="w-2 h-2 rounded-full bg-orange-600"></span>
+<span class="text-xs font-bold uppercase tracking-tight">Alta</span>
+</div>
+<div class="px-3 py-1.5 rounded-full bg-amber-50 text-amber-700 border border-amber-100">
+<span class="text-xs font-bold uppercase tracking-tight">En Proceso</span>
+</div>
+<div class="flex">
+<img alt="Agent avatar" class="w-8 h-8 rounded-full border-2 border-white object-cover" data-alt="Professional woman looking at camera with a confident smile, warm studio portrait with soft backlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQNegTKaHQTrRrVMk6nQ9HUPLeQKEzz4O_pFDWO9_wRogleoJerJulQUb_lBH2TEC7UFUC0N7Ijm9PNzw49hRSoYbRRQ9jVdjZaSz6Fo7D92Y9jJunuWvs1HVgHWOXfEQu_D3x5fEk1g29c9ZZ4qOG3YuplTM6cDc2QFWsVku4a05jQPXGfGOiXl8oKGvxIAHV7N5tcAfpcyebv_XEkWkNYZpqXn8NxI5CSA1fdIucMrBDyPFVOvQgooz9tQ8_MyZ7IzSLGBcgSys"/>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<footer class="mt-12 flex items-center justify-between">
+<p class="text-sm text-outline">Mostrando <span class="font-bold text-on-surface">4</span> de <span class="font-bold text-on-surface">24</span> tickets</p>
+<div class="flex items-center gap-1">
+<button class="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-surface-container-low transition-colors text-outline">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-xl bg-primary text-white font-bold shadow-md">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-surface-container-low transition-colors text-on-surface-variant font-medium">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-surface-container-low transition-colors text-on-surface-variant font-medium">3</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-xl hover:bg-surface-container-low transition-colors text-outline">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</footer>
+</main>
+<!-- Floating Action Button -->
+<button class="lg:hidden fixed bottom-8 right-8 w-14 h-14 bg-gradient-to-br from-primary to-primary-container text-white rounded-full flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all z-50">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">add</span>
+</button>
+</body></html>

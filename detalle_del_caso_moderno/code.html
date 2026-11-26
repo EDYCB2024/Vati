@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-highest": "#e0e3e5",
+                    "tertiary-fixed-dim": "#4cd7f6",
+                    "surface-dim": "#d8dadc",
+                    "secondary-fixed": "#d8e2ff",
+                    "surface-container-low": "#f2f4f6",
+                    "primary": "#3a388b",
+                    "background": "#f7f9fb",
+                    "on-error-container": "#93000a",
+                    "surface-tint": "#5654a8",
+                    "error-container": "#ffdad6",
+                    "primary-fixed": "#e2dfff",
+                    "error": "#ba1a1a",
+                    "on-surface-variant": "#454652",
+                    "inverse-on-surface": "#eff1f3",
+                    "inverse-primary": "#c3c0ff",
+                    "on-tertiary-container": "#66e2ff",
+                    "on-surface": "#191c1e",
+                    "surface-container": "#eceef0",
+                    "on-primary-fixed-variant": "#3e3c8f",
+                    "primary-container": "#5250a4",
+                    "outline-variant": "#c5c5d4",
+                    "on-tertiary-fixed": "#001f26",
+                    "on-primary-container": "#d0cdff",
+                    "on-tertiary-fixed-variant": "#004e5c",
+                    "on-error": "#ffffff",
+                    "on-secondary-fixed-variant": "#004395",
+                    "on-primary-fixed": "#100563",
+                    "secondary": "#0058be",
+                    "surface-bright": "#f7f9fb",
+                    "tertiary": "#004a57",
+                    "surface-container-high": "#e6e8ea",
+                    "secondary-fixed-dim": "#adc6ff",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#2d3133",
+                    "on-secondary-container": "#fefcff",
+                    "primary-fixed-dim": "#c3c0ff",
+                    "on-secondary-fixed": "#001a42",
+                    "tertiary-container": "#006374",
+                    "on-background": "#191c1e",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#2170e4",
+                    "on-primary": "#ffffff",
+                    "surface": "#f7f9fb",
+                    "tertiary-fixed": "#acedff",
+                    "surface-variant": "#e0e3e5",
+                    "outline": "#757684"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "1.5rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "body": ["Inter"],
+                    "label": ["Inter"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(24px);
+        }
+        .tonal-shift {
+            background: linear-gradient(135deg, #f7f9fb 0%, #f2f4f6 100%);
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 w-full bg-white/70 backdrop-blur-xl z-50 shadow-[0_8px_30px_rgb(58,56,139,0.05)]">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold bg-gradient-to-br from-indigo-700 to-indigo-500 bg-clip-text text-transparent font-headline tracking-tight">Ethereal Concierge</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-slate-500 font-medium hover:text-indigo-500 transition-colors duration-300" href="#">Dashboard</a>
+<a class="text-indigo-700 font-semibold border-b-2 border-indigo-600 pb-1" href="#">Tickets</a>
+<a class="text-slate-500 font-medium hover:text-indigo-500 transition-colors duration-300" href="#">Knowledge</a>
+<a class="text-slate-500 font-medium hover:text-indigo-500 transition-colors duration-300" href="#">Messages</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-slate-500 hover:text-primary transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 text-slate-500 hover:text-primary transition-all active:scale-95">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container">
+<img alt="User profile" data-alt="close-up portrait of a professional male concierge manager in a modern office setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiOg1komz_IA5WPekP1Dib_bKi_r-TEdbai7imwDitQk5p2qXnfK0dok7BMehSbwFj6SBHKnIEy_MzzrVbKAdSounR2zXsykuI5MPrHHyEmucB7aAcNQ1HTCW2Jc4OgWu7wVEDlk7NgRHIgEuo3THGBfjmFrh3MjKjDU67dBOqG3qhRiQKb6hXov5qSgF_fGY8USqqchEkXPyx14-uy6JulelQTR0xEyNwuN_p0JH9X0vwbX_0wxlWDverFptUcVx6Oxh54nwqSOs"/>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-1 max-w-screen-2xl mx-auto w-full px-8 py-6 flex gap-8 h-[calc(100vh-80px)]">
+<!-- Left Sidebar: Context & Actions -->
+<aside class="w-80 flex flex-col gap-6 overflow-y-auto no-scrollbar">
+<!-- Customer Insight Card -->
+<section class="glass-panel rounded-xl p-8 shadow-2xl shadow-indigo-900/5">
+<h3 class="text-slate-900 font-headline font-bold text-lg mb-6">Customer Insight</h3>
+<div class="flex flex-col items-center text-center mb-6">
+<div class="w-20 h-20 rounded-full mb-4 ring-4 ring-primary/5 p-1">
+<img alt="Elena Rodriguez" class="w-full h-full rounded-full object-cover" data-alt="professional headshot of a middle-aged female corporate client with a confident smile and soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBu6IYwCm4G4WeYZ2S-jsGT_YXYANHXSwMtQXZOT6l5NJbuvh2w4l6OdkS3NrwDtPhfhhUqQ-G1J4O3AFUePJCCzeBE5X0VpLl4h1dARyf_62vR0VRwgwHoCSoiXZs5Q0_O-Kf-9mJPd2bkqakWFJxMxTMCga6Jy_bEfnOgrj9TyG1iDwPc61f5AqJAwClxshVaIzR86YZKGzlmGUMAyEZfC914dfB7TikAuaxXd0_SQlaryKEs1v634odaw7uD39AXrdHt2E64z50"/>
+</div>
+<h4 class="font-headline font-bold text-on-surface">Elena Rodriguez</h4>
+<span class="text-body text-slate-500 text-sm">Enterprise Account • Madrid</span>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between text-sm">
+<span class="text-slate-500">LTV</span>
+<span class="font-semibold text-primary">$12,450.00</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-slate-500">Sentiment</span>
+<span class="flex items-center gap-1 text-tertiary font-semibold">
+                            Positive <span class="material-symbols-outlined text-[16px]" data-icon="sentiment_satisfied">sentiment_satisfied</span>
+</span>
+</div>
+<div class="pt-4 border-t border-outline-variant/15">
+<p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Recent Activity</p>
+<div class="space-y-3">
+<div class="flex gap-3 text-xs">
+<span class="material-symbols-outlined text-slate-400" data-icon="check_circle">check_circle</span>
+<div>
+<p class="text-on-surface font-medium">Renewal Completed</p>
+<p class="text-slate-400">2 days ago</p>
+</div>
+</div>
+<div class="flex gap-3 text-xs">
+<span class="material-symbols-outlined text-slate-400" data-icon="mail">mail</span>
+<div>
+<p class="text-on-surface font-medium">Newsletter Opened</p>
+<p class="text-slate-400">5 days ago</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Internal Notes -->
+<section class="glass-panel rounded-xl p-8 shadow-2xl shadow-indigo-900/5">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-slate-900 font-headline font-bold text-lg">Internal Notes</h3>
+<button class="text-primary hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+</button>
+</div>
+<div class="bg-primary/5 rounded-xl p-4 mb-4">
+<p class="text-sm text-on-surface-variant leading-relaxed">
+                        Customer is exploring the VIP integration package. Handle with high priority.
+                    </p>
+<p class="text-[10px] text-primary font-bold mt-2 uppercase tracking-widest">James Miller • 4h ago</p>
+</div>
+<div class="bg-surface-container-low rounded-xl p-4">
+<p class="text-sm text-on-surface-variant leading-relaxed italic">
+                        No previous technical escalations on this account.
+                    </p>
+</div>
+</section>
+</aside>
+<!-- Center: Ticket Conversation -->
+<div class="flex-1 flex flex-col gap-6">
+<!-- Ticket Header -->
+<header class="glass-panel rounded-xl p-6 shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-6">
+<div class="bg-primary-fixed w-12 h-12 rounded-xl flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="confirmation_number">confirmation_number</span>
+</div>
+<div>
+<div class="flex items-center gap-3">
+<h2 class="font-headline font-extrabold text-xl text-on-surface">TK-8821: API Sync Delays</h2>
+<span class="bg-tertiary/10 text-tertiary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider backdrop-blur-sm">Open</span>
+</div>
+<p class="text-sm text-slate-500 mt-1">Started on Oct 14, 2023 • Assigned to <span class="text-primary font-medium">Marcus Chen</span></p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="bg-surface-container-highest text-on-surface-variant px-5 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2 hover:bg-slate-200 transition-all active:scale-95">
+<span class="material-symbols-outlined text-[20px]" data-icon="bolt">bolt</span>
+                        Escalate
+                    </button>
+<button class="bg-gradient-to-br from-primary to-primary-container text-white px-6 py-2.5 rounded-full text-sm font-semibold flex items-center gap-2 shadow-lg shadow-indigo-900/10 hover:shadow-indigo-900/20 transition-all active:scale-95">
+<span class="material-symbols-outlined text-[20px]" data-icon="done_all">done_all</span>
+                        Resolve Case
+                    </button>
+</div>
+</header>
+<!-- Conversation Area -->
+<div class="flex-1 overflow-y-auto no-scrollbar space-y-8 pr-4">
+<!-- Customer Message -->
+<div class="flex items-start gap-4">
+<img alt="Elena" class="w-10 h-10 rounded-full" data-alt="portrait of Elena Rodriguez" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjD5e6gwfN8Hl407nw3iSriDXTzTY4VZVmCHPJejfRtVw94ad56ybe1D2Ap3f2pTAC5sukk4mzLuAzFmyHQ28-QT6xTUBuO7u0NWFreo1qwEbpNUlbkexjjEaa1dZ1wmGEEb0ABh-ZRj4BvPk24AWX2qkU1wpLLKGOHTIDvo6eNaig193htzgEEmlngZE4IulcbGWJlJp1n_xISgBmw3-AMOcQFFjxNYpoGacNplim5x7z4DKuBf-a3NSeyhN3eqg6NHCnrjICsJI"/>
+<div class="flex flex-col max-w-2xl">
+<div class="bg-white p-6 rounded-2xl rounded-tl-none shadow-sm text-on-surface leading-relaxed">
+<p>Hi Team, we've noticed a significant lag in the data synchronization between our CRM and the Ethereal platform over the last 4 hours. It seems to be affecting approximately 20% of our active users.</p>
+<p class="mt-4">Can you check if there are any known incidents or if this is isolated to our instance?</p>
+</div>
+<span class="text-[11px] text-slate-400 mt-2 ml-1">Elena Rodriguez • 10:42 AM</span>
+</div>
+</div>
+<!-- Agent Response -->
+<div class="flex items-start gap-4 flex-row-reverse">
+<img alt="Marcus" class="w-10 h-10 rounded-full" data-alt="portrait of Marcus Chen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDd0JhbUWGeJ0U-xQ-uyBQLqJR6ks5F2WINprcKc10Z3x0Q1hy80y7kJ10_k73FbnW-cXcCuHks-pEUOlYMvZcsAPXav-joYXKVwToBecA_-SOlWqPMc2gcIbYGqEwcKms2NaukSeHd0a5YbPkc52Cu0JPSxz-CfwG9nK_epqpCSOOl4CQwqCxkYBqo59kLs6wAgjnUcrjDet8IRibHjgMHnvme7W8vM16gsMqPfWDNWudmNnouJlK9rBw4875ieMzQG2pTXL-dkzU"/>
+<div class="flex flex-col max-w-2xl items-end">
+<div class="bg-primary text-white p-6 rounded-2xl rounded-tr-none shadow-xl shadow-indigo-900/10 leading-relaxed">
+<p>Hello Elena, thanks for reaching out. I'm looking into this immediately.</p>
+<p class="mt-4">I can see a slight increase in latency on the EU-West-1 nodes. Could you please provide a sample of the affected User IDs so I can trace the logs specifically for your account?</p>
+</div>
+<span class="text-[11px] text-slate-400 mt-2 mr-1">Marcus Chen • 11:05 AM</span>
+</div>
+</div>
+<!-- Customer Message with Attachment -->
+<div class="flex items-start gap-4">
+<img alt="Elena" class="w-10 h-10 rounded-full" data-alt="portrait of Elena Rodriguez" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAS_wQC9yNce8mwIVO6Jt24Kxk88cTYjEqRHPVKyCy62iBrjcY6ythspAODxVfa-_nHS1ybkKGUUmjyyUVST-Eu-X6wJ6o_PeEouiyGdRqMVQ7eld7JEDpOEpIdqtSApjdCuEYlm2INYxjuB8Q3EObu6p5DaBKrxBd5VYC04lXQ17KAsilExGD2m_KusfcJmjivUnLcuk0kdW8ZtjHBjTUivEHRU4dzggu5IOpeGYFxqMGB8x9vuUiQgUoCHQg6cIFsCZqfx3ajwqg"/>
+<div class="flex flex-col max-w-2xl">
+<div class="bg-white p-6 rounded-2xl rounded-tl-none shadow-sm text-on-surface leading-relaxed">
+<p>Sure, Marcus. Here is a CSV with the IDs and the error logs we captured from our end. Let me know if you need anything else.</p>
+<!-- File Attachment Preview -->
+<div class="mt-6 flex items-center gap-4 bg-surface-container-low p-4 rounded-xl border border-outline-variant/10 group cursor-pointer hover:bg-surface-container hover:border-primary/20 transition-all">
+<div class="bg-white w-12 h-12 rounded-lg flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary" data-icon="description">description</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold text-on-surface group-hover:text-primary transition-colors">sync_error_logs_oct14.csv</p>
+<p class="text-xs text-slate-400">1.2 MB • CSV Document</p>
+</div>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary" data-icon="download">download</span>
+</div>
+</div>
+<span class="text-[11px] text-slate-400 mt-2 ml-1">Elena Rodriguez • 11:20 AM</span>
+</div>
+</div>
+</div>
+<!-- Response Input Area -->
+<footer class="mt-auto">
+<div class="glass-panel p-2 rounded-2xl shadow-lg border border-outline-variant/5">
+<div class="relative">
+<textarea class="w-full bg-transparent border-none focus:ring-0 text-on-surface p-6 min-h-[140px] resize-none font-body text-base placeholder:text-slate-400" placeholder="Type your response to Elena..." spellcheck="false"></textarea>
+<div class="absolute bottom-4 left-6 flex items-center gap-2">
+<button class="p-2 text-slate-400 hover:text-primary hover:bg-primary/5 rounded-full transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="attach_file">attach_file</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-primary hover:bg-primary/5 rounded-full transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="mood">mood</span>
+</button>
+<button class="p-2 text-slate-400 hover:text-primary hover:bg-primary/5 rounded-full transition-all">
+<span class="material-symbols-outlined text-[20px]" data-icon="image">image</span>
+</button>
+<div class="h-4 w-[1px] bg-outline-variant/20 mx-2"></div>
+<button class="px-4 py-1.5 rounded-full text-xs font-bold text-primary hover:bg-primary/10 transition-all">
+                                Templates
+                            </button>
+</div>
+<div class="absolute bottom-4 right-6">
+<button class="bg-gradient-to-br from-primary to-primary-container text-white px-8 py-3 rounded-full font-bold flex items-center gap-3 shadow-xl shadow-indigo-900/10 hover:shadow-indigo-900/20 hover:scale-[1.02] active:scale-95 transition-all">
+                                Send Reply
+                                <span class="material-symbols-outlined text-[18px]" data-icon="send" style="font-variation-settings: 'FILL' 1;">send</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex justify-between px-4 mt-3">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-secondary animate-pulse"></div>
+<span class="text-[11px] text-slate-400 font-medium">Marcus is typing...</span>
+</div>
+<div class="flex items-center gap-4">
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="rounded text-primary focus:ring-primary border-outline-variant/50" type="checkbox"/>
+<span class="text-[11px] text-slate-500 font-medium group-hover:text-primary transition-colors">Also post as internal note</span>
+</label>
+</div>
+</div>
+</footer>
+</div>
+</main>
+</body></html>
