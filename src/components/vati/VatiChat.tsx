@@ -654,51 +654,51 @@ export default function VatiChat() {
   }
 
   return (
-    <div className="min-h-screen bg-white text-on-surface flex flex-col">
+    <div className="min-h-dvh bg-white text-on-surface flex flex-col">
       {/* Clean Portal Header */}
-      <header className="px-6 sm:px-10 py-4 bg-white/90 backdrop-blur-md sticky top-0 z-20 shadow-[0_1px_0_rgba(58,56,139,0.08)]">
-        <div className="max-w-6xl mx-auto flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl vati-gradient flex items-center justify-center text-white shadow-md shadow-primary/20">
+      <header className="px-4 sm:px-10 py-3 sm:py-4 bg-white/90 backdrop-blur-md sticky top-0 z-20 shadow-[0_1px_0_rgba(58,56,139,0.08)]">
+        <div className="max-w-6xl mx-auto flex items-center justify-between gap-2 sm:gap-4">
+          <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
+            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl vati-gradient flex items-center justify-center text-white shadow-md shadow-primary/20 shrink-0">
               <Sparkles className="w-4 h-4" />
             </div>
-            <div>
-              <span className="font-headline font-extrabold text-base text-primary block leading-none">
+            <div className="min-w-0">
+              <span className="font-headline font-extrabold text-sm sm:text-base text-primary block leading-none truncate">
                 VATC Soporte
               </span>
-              <span className="text-[11px] text-on-surface-variant">
+              <span className="text-[10px] sm:text-[11px] text-on-surface-variant block truncate">
                 Centro de Autogestión POS
               </span>
             </div>
           </div>
 
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2 sm:gap-3 shrink-0">
             <button
               type="button"
               onClick={() => setWidgetOpen(true)}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold bg-primary-fixed/80 text-primary hover:bg-primary-fixed transition-colors cursor-pointer"
+              className="inline-flex items-center gap-1.5 px-3 sm:px-4 py-2 rounded-full text-xs font-semibold bg-primary-fixed/80 text-primary hover:bg-primary-fixed transition-colors cursor-pointer"
             >
               <MessageCircle className="w-3.5 h-3.5" />
-              Abrir Vati
+              <span className="hidden xs:inline sm:inline">Abrir Vati</span>
             </button>
             <Link
               href="/backoffice"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold vati-gradient text-white hover:shadow-md hover:shadow-primary/25 transition-all"
+              className="inline-flex items-center gap-1.5 px-3 sm:px-4 py-2 rounded-full text-xs font-semibold vati-gradient text-white hover:shadow-md hover:shadow-primary/25 transition-all"
             >
               <LayoutDashboard className="w-3.5 h-3.5" />
-              Backoffice
+              <span>Backoffice</span>
             </Link>
           </div>
         </div>
       </header>
 
       {/* Portal Background Showcase (like Mercantil's MIA landing page) */}
-      <main className="flex-1 bg-gradient-to-b from-[#f6f8fc] to-white px-6 sm:px-10 py-10 sm:py-14">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      <main className="flex-1 bg-gradient-to-b from-[#f6f8fc] to-white px-3 sm:px-10 py-4 sm:py-12">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10 items-start">
           {/* Left / Center Floating MIA-Style Vati Widget */}
-          <div className="lg:col-span-5 flex justify-center">
+          <div className="lg:col-span-5 flex justify-center w-full">
             {widgetOpen ? (
-              <div className="w-full max-w-[390px] h-[640px] rounded-[28px] bg-white shadow-[0_28px_80px_-16px_rgba(30,41,110,0.32)] ring-2 ring-[#1c4ea8]/25 overflow-hidden flex flex-col relative">
+              <div className="w-full max-w-full sm:max-w-[400px] h-[calc(100dvh-5.5rem)] min-h-[460px] max-h-[660px] sm:h-[640px] rounded-3xl sm:rounded-[28px] bg-white shadow-[0_28px_80px_-16px_rgba(30,41,110,0.32)] ring-2 ring-[#1c4ea8]/25 overflow-hidden flex flex-col relative">
                 {!hasStarted ? (
                   /* PRE-CHAT IDENTIFICATION SCREEN (MIA-style) */
                   <div className="flex-1 flex flex-col bg-gradient-to-b from-[#d8e6fb] via-[#e9f1fc] to-[#e9f1fc]">
@@ -844,7 +844,7 @@ export default function VatiChat() {
 
                       {/* Compact Quick-Reply Pill Buttons */}
                       {!createdTicket && currentStep.buttons && (
-                        <div className="pl-10 space-y-2">
+                        <div className="pl-2 sm:pl-10 space-y-2">
                           <div className="flex flex-wrap gap-1.5">
                             {currentStep.buttons.map((btn) => (
                               <button
@@ -906,7 +906,7 @@ export default function VatiChat() {
                                         [field.name]: e.target.value,
                                       }))
                                     }
-                                    className="w-full rounded-xl bg-[#f4f7fc] px-3 py-2 text-xs text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-secondary/40 resize-none"
+                                    className="w-full rounded-xl bg-[#f4f7fc] px-3 py-2 text-base sm:text-xs text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-secondary/40 resize-none"
                                   />
                                 ) : (
                                   <input
@@ -920,7 +920,7 @@ export default function VatiChat() {
                                         [field.name]: e.target.value,
                                       }))
                                     }
-                                    className="w-full rounded-xl bg-[#f4f7fc] px-3 py-2 text-xs text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-secondary/40"
+                                    className="w-full rounded-xl bg-[#f4f7fc] px-3 py-2 text-base sm:text-xs text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-secondary/40"
                                   />
                                 )}
                               </div>
@@ -1063,7 +1063,7 @@ export default function VatiChat() {
                             ? "Escribe un mensaje para el agente..."
                             : "Escribe tu consulta aquí..."
                         }
-                        className="flex-1 rounded-full bg-[#f4f7fc] px-4 py-2.5 text-xs text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-secondary/40"
+                        className="flex-1 rounded-full bg-[#f4f7fc] px-4 py-2.5 text-base sm:text-xs text-on-surface placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-secondary/40"
                       />
                       <button
                         type="submit"
